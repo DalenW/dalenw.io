@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Muli');
 :root {
     --background-yellow: #FDCD68;
     --main-red: #DF393D;
@@ -27,8 +27,9 @@
     width: 100%;
     margin: 0px;
     padding: 0px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
     box-sizing: initial;
+    overflow: hidden;
 }
 
 html {
@@ -49,4 +50,6 @@ body {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: flex-start;
+
+    background-color: #fcfcf8;
 }
