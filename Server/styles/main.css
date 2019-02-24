@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+:root {
+    --background-yellow: #FDCD68;
+    --main-red: #DF393D;
+    --main-orange: #F7811C;
+    --main-yellow: #FBB828;
+    --main-green: #5FB946;
+    --main-blue: #009DDD;
+    --main-purple: #943B95;
+    /* Palette URL: http://paletton.com/#uid=23n130ku3oMkHvmqftoxGkkGMf8 */
+    --color-primary-0: #0B657A;
+    /* Main Primary color */
+    --color-primary-1: #3A889B;
+    --color-primary-2: #1D7B91;
+    --color-primary-3: #035264;
+    --color-primary-4: #013D4B;
+    --color-complement-0: #C5680C;
+    /* Main Complement color */
+    --color-complement-1: #FAA858;
+    --color-complement-2: #EA8A2A;
+    --color-complement-3: #A25000;
+    --color-complement-4: #793C00;
+    --slategray: #373737;
+}
+
+* {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: initial;
+}
+
+html {
+    background-color: white;
+    height: 100%;
+    margin: 0px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+}
