@@ -1,3 +1,23 @@
-main h1 {
+main {
     text-align: center;
+    margin-top: 40px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#homepageContentDiv {
+    color: var(--slategray);
+    width: 100%;
+    flex-grow: 3;
+}
+
+#homepageLinksDiv {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
 }
