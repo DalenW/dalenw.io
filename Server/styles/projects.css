@@ -1,50 +1,84 @@
-.card {
-    width: auto;
-    height: inherit;
-    margin: 1.25rem;
-    flex-basis: 18rem;
-    flex-grow: 1;
+main {
+    color: var(--slategray);
+
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+
+    width: 70%;
 }
 
-.card-body {
-    width: auto;
+#pageTitle {
+    margin-top: 0px;
+    font-size: 40px;
+}
+
+#projectList {
+    margin-top: 2.5%;
+
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
-.card-body p {
-    flex-grow: 5;
+.listItem {
+    border: 2px;
+    border-radius: 15px;
+    background-color: #eeeeee;
+
+    display: grid;
+    grid-template-columns: 20% 20% 50% 10%;
+    grid-template-rows: 70% 40%;
+    height: 100px;
 }
 
-.list-group-item {
-    width: auto;
+.listTitleBox {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
-
-/* Desktop */
-
-@media screen and (min-width: 1000px) {
-    #project-cards {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
+.listDateBox {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
+.listLanguageBox {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
 
-/* Mobile */
+.listDescriptionBox {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
 
-@media screen and (max-width: 1000px) {
-    main {
-        font-size: 150%;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-    .card-title {
-        font-size-adjust: 150%;
-    }
+.listLinkBox {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.listTitle {
+    height: 100%;
+    font-size: 30px;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.listDate {
+    padding-left: 10px;
+}
+
+.listDescription {
+    padding-top: 5px;
 }
