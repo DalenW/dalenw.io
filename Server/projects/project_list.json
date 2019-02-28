@@ -26,7 +26,7 @@
             "language": "Web Design",
             "description": "This was my final project for my beginner web design class. Hackintoshing is a little hobby of mine, and I wrote a guide on how to create your very own hackintosh. I do not update this guide at all, and is most likely out of date.",
             "aboutURL": "",
-            "projectURL": "Hackintosh"
+            "projectURL": "hackintosh"
         },
         {
             "name": "Weather",
@@ -35,7 +35,7 @@
             "language": "Web Design",
             "description": "A class project I did in my beginner web design class. Talk to an API and display the weather. Pretty straight forward. This site is ugly.",
             "aboutURL": "",
-            "projectURL": "Weather/home"
+            "projectURL": "weather/home"
         },
         {
             "name": "Robot",
