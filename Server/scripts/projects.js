@@ -47,6 +47,13 @@ function generatePage() {
                         ${currentProject.description}
                     </p>
                 </div>
+                <div class="listProjectLinkBox">
+                    <a href="${currentProject.projectURL}" class="listProjectLink">
+                        <p class="listProjectLinkText">
+                            Link to Project
+                        </p>
+                    </a>
+                </div>
             </div>
             `;
         }

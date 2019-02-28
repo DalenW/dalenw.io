@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
+
 :root {
     --background-yellow: #FDCD68;
     --main-red: #DF393D;
@@ -29,13 +30,11 @@
     padding: 0px;
     font-family: 'Muli', sans-serif;
     box-sizing: initial;
-    overflow: hidden;
 }
 
 html {
     background-color: white;
-    height: 100%;
-    margin: 0px;
+    overflow-x: hidden;
 }
 
 a {
@@ -44,7 +43,7 @@ a {
 }
 
 body {
-    height: 100%;
+    height: 100vh;
     position: relative;
     display: flex;
     flex-wrap: nowrap;
