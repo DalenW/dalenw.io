@@ -15,7 +15,7 @@
             "show": true,
             "date": "Current",
             "language": "Web Design",
-            "description": "This is my website. It is an ongoing project to showcase my skills and a little bit about my life. I will always be updating it and changing it around. It used to be on a github site, then I rewrote it and put it under node.js, and then I rewrote it again and it is hosted on caddy.",
+            "description": "This is my website. It is an ongoing project to showcase my skills and a little bit about my life. I will always be updating it and changing it around. It used to be on a github site, then I rewrote it and put it under node.js, and then I rewrote it again and it is now on Caddy.",
             "aboutURL": "",
             "projectURL": "/"
         },
