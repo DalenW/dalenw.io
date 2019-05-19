@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>DalenW - Home</title>
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+        <link type="text/css" rel="stylesheet" href="/styles/main.css">
+    </head>
+
+    <style>
+        main {
+            margin-left: 10%;
+        }
+        #barcodeInput {
+            width: 300px;
+        }
+
+        #submitButton {
+            width: 75px;
+        }
+    </style>
+
+    <main>
+        <header>
+            <h1>FedEx Tracking Number Shortener</h1>
+        </header>
+        
+        <body>
+            <form>
+                FedEx Barcode:
+                <input type="text" name="barcode" id="barcodeInput">
+                <br>
+                <!-- <input type="submit" value="Submit" id="submitButton"> -->
+            </form>
+
+            <h4 id="output">The shortened tracking number is: null</h4>
+        </body>
+    </main>
+    <script src="/scripts/jquery.js"></script>
+    <script>
+        $("#barcodeInput").keyup(function () {
+            var value = $("#barcodeInput").val();
+
+            if(value.length == 34) {
+                if(value.slice(0, 4) == "1001") {
+                    
+                    console.log(value.slice(22));
+
+                    $("#output").html("The shortened tracking number is: " + value.slice(22));
+                    
+                }
+                
+                
+            }
+
+            //console.log("Value = %v", value);
+        });
+    </script>
+</html>
