@@ -11,50 +11,69 @@
 
     <style>
         main {
-            margin-left: 10%;
+            padding-left: 10%
         }
         #barcodeInput {
-            width: 300px;
+            width: 350px;
         }
 
-        #submitButton {
+        #clearButton {
             width: 75px;
+        }
+        p {
+            margin-top: 10px;
         }
     </style>
 
-    <main>
+    <body>
         <header>
-            <h1>FedEx Tracking Number Shortener</h1>
+            <h1 style="text-align: center">FedEx Tracking Number Shortener</h1>
         </header>
-        
-        <body>
-            <form>
+
+        <main>
+            <form action="javascript:clear()">
                 FedEx Barcode:
                 <input type="text" name="barcode" id="barcodeInput">
+                <!-- <button type="button" id="clearButton" onclick="javascript:clear();">Clear</button> -->
                 <br>
                 <!-- <input type="submit" value="Submit" id="submitButton"> -->
             </form>
 
-            <h4 id="output">The shortened tracking number is: null</h4>
-        </body>
-    </main>
+            <p>The shortened tracking number is: <b id="output" contenteditable="true">null</b></p>
+            <p id="copyAlert" style="color: red">Copied!</p>
+        </main>
+    </body>
+
     <script src="/scripts/jquery.js"></script>
     <script>
+        clear();
+        $("#copyAlert").hide();
+
+        function clear() {
+            $("#barcodeInput").val('');
+            //console.log("test");
+        }
+
         $("#barcodeInput").keyup(function () {
             var value = $("#barcodeInput").val();
 
             if(value.length == 34) {
                 if(value.slice(0, 4) == "1001") {
+                    var bar = value.slice(22, 26) + " " + value.slice(26, 30) + " " + value.slice(30);
                     
-                    console.log(value.slice(22));
+                    console.log(bar);
+                    $("#output").html(bar);
 
-                    $("#output").html("The shortened tracking number is: " + value.slice(22));
+                    var copyText = document.querySelector("#output");
+                    console.log(copyText);
+                    //copyText.select();
+                    document.execCommand("copy");
+
+                    //$("#copyAlert").show();
+                    //$("#copyAlert").fadeOut(4000);
                     
                 }
-                
-                
             }
-
             //console.log("Value = %v", value);
         });
     </script>
