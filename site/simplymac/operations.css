@@ -1,9 +1,14 @@
+body {
+    color: var(--slategray);
+}
+
 main {
     padding-left: 10%
 }
 
 h1 {
     text-align: center;
+    color: var(--slategray);
 }
 
 .link {
