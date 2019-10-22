@@ -4,4 +4,4 @@ Caddyfile
 
 *.log
 
-/files
+.vscode

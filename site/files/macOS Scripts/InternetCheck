@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function main () 
+{
+    echo \#\#\# Running \#\#\#
+    kextstat -kl | awk ' !/apple/ { print $6 } '
+
+    exit 0
+}
+
+main
