@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple Check-In</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link type="text/css" rel="stylesheet" href="/styles/main.css">
+    <link type="text/css" rel="stylesheet" href="operations.css">
+    <link rel="stylesheet" href="simplecheckin.css">
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <header>
+        <a href="/simplymac/">
+            <h1>Simple Check-In</h1>
+        </a>
+    </header>
+
+    <main>
+        <div id="GSXCheckIn" class="formDiv">
+            <h3>GSX Check-In</h3>
+            <form action="javascript:GSXSubmit()" id="GSXForm">
+                <div id="GSXIssueDiv">
+                    <p id="GSXIssue">Issue: </p>
+                    <input type="text" name="issue" id="GSXIssueInput" class="textInput">
+                </div>
+
+                <p id="GSXStepsTaken">Steps Taken: </p>
+                <textarea rows="5" cols="60" name="stepsTaken" id="GSXStepsTakenInput"></textarea>
+
+                <div id="GSXCosmeticDiv">
+                    <p id="GSXCosmetic">Cosmetic Condition: </p>
+                    <input type="text" name="cosmeticCondition" id="GSXCosmeticInput" class="textInput">
+                </div>
+
+                <div id="GSXWarrantyDiv">
+                    <p id="GSXRecommended">Recommended Resolution: </p>
+                    <p id="GSXWarranty">In Warranty? </p>
+                    <input type="checkbox" name="GSXWarranty" id="GSXWarrantyCheck" class="checkbox" checked>
+                </div>
+                <textarea rows="2" name="recommended" id="GSXRecommendedInput"></textarea>
+                
+                <div id="GSXButtonDiv">
+                    <button type="submit" id="GSXSubmitButton" form="GSXForm">Submit</button>
+                    <button type="button" id="GSXClearButton">Clear</button>
+                </div>
+            </form>
+
+            <div id="GSXOutputText">
+                
+            </div>
+        </div>
+
+        <div id="SROCheckIn" class="formDiv">
+            <h3>SRO Check-In</h3>
+            <form action="javascript:SROSubmit()" id="SROForm">
+                <p id="SROSymptom">Symptoms: </p>
+                <input type="text" name="symptom" id="SROSymptomInput" class="textInput">
+
+                <p id="SROBackup">Backup: </p>
+                <input type="text" name="backup" id="SROBackupInput" class="textInput" value="Yes">
+
+                <p id="SROTimeframe">Timeframe: </p>
+                <select id="SROTimeframeInput">
+                    <option>EOD</option>
+                    <option>2 - 3 Business Days</option>
+                    <option>3 - 5 Business Days</option>
+                    <option>5 - 7 Business Days</option>
+                    <option>1 - 2 Weeks</option>
+                    <option>Call when ready</option>
+                </select>
+
+                <p id="SROPrice">Price: </p>
+                <input type="text" name="price" id="SROPriceInput" class="textInput" value="$">
+
+                <p id="SROFirmware">Firmware: </p>
+                <select id="SROFirmwareInput">
+                    <option>Off</option>
+                    <option>On</option>
+                </select>
+                
+                <button type="submit" id="SROSubmitButton" form="SROForm">Submit</button>
+                <button type="button" id="SROClearButton">Clear</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+<script src="/scripts/jquery.js"></script>
+<script src="simplecheckin.js"></script>
+<script>
+
+</script>
+
+</html>
