@@ -24,71 +24,115 @@
     </header>
 
     <main>
-        <div id="GSXCheckIn" class="formDiv">
-            <h3>GSX Check-In</h3>
-            <form action="javascript:GSXSubmit()" id="GSXForm">
-                <div id="GSXIssueDiv">
-                    <p id="GSXIssue">Issue: </p>
-                    <input type="text" name="issue" id="GSXIssueInput" class="textInput">
-                </div>
+        <div id="repairTree">
+            <div id="commonSelectDiv">
+                <p id="commonTitle">Common Repairs:</p>
+                <select id="commonSelect">
+                    <option>None</option>
+                    <option>1. iPhone Broken Display Replacement</option>
+                    <option>2. iPhone Battery replacement</option>
+                    <option>3. Malware Removal</option>
+                    <option>4. Wipe and reinstall</option>
+                    <option>5. iPhone 7 No-Service REP</option>
+                    <option>6. iPhone X Display REP</option>
+                    <option>7. MacBook Keyboard REP</option>
+                    <option>8. MacBook Pro 15'' Battery REP</option>
+                    
+                </select>
+            </div>
 
-                <p id="GSXStepsTaken">Steps Taken: </p>
-                <textarea rows="5" cols="60" name="stepsTaken" id="GSXStepsTakenInput"></textarea>
+            <div id="deviceSelectDiv">
+                <p id="deviceSelectTitle">Device:</p>
+                <select id="deviceSelect">
+                    <option>1. iPhone SE</option>
+                    <option>2. iPhone 6s, 7, 8</option>
+                    <option>3. iPhone 6s+, 7+, 8+</option>
+                    <option>4. iPhone XR, 11</option>
+                    <option>5. iPhone X, XS, 11 Pro</option>
+                    <option>6. iPhone XS Max, 11 Pro Max</option>
+                </select>
+            </div>
 
-                <div id="GSXCosmeticDiv">
-                    <p id="GSXCosmetic">Cosmetic Condition: </p>
-                    <input type="text" name="cosmeticCondition" id="GSXCosmeticInput" class="textInput">
-                </div>
-
-                <div id="GSXWarrantyDiv">
-                    <p id="GSXRecommended">Recommended Resolution: </p>
-                    <p id="GSXWarranty">In Warranty? </p>
-                    <input type="checkbox" name="GSXWarranty" id="GSXWarrantyCheck" class="checkbox" checked>
-                </div>
-                <textarea rows="2" name="recommended" id="GSXRecommendedInput"></textarea>
-                
-                <div id="GSXButtonDiv">
-                    <button type="submit" id="GSXSubmitButton" form="GSXForm">Submit</button>
-                    <button type="button" id="GSXClearButton">Clear</button>
-                </div>
-            </form>
-
-            <div id="GSXOutputText">
-                
+            <div id="warrantyDiv">
+                <p id="warrantyTitle">Repair In Warranty?</p>
+                <input type="checkbox" name="warranty" id="warrantyCheck" class="checkbox" checked>
             </div>
         </div>
+        
+        <div id="forms">
+            <div id="GSXCheckIn" class="formDiv">
+                <h3>GSX Check-In</h3>
+                <form action="javascript:GSXSubmit()" id="GSXForm">
+                    <div id="GSXIssueDiv">
+                        <p id="GSXIssue">Issue: </p>
+                        <input type="text" name="issue" id="GSXIssueInput" class="textInput">
+                    </div>
 
-        <div id="SROCheckIn" class="formDiv">
-            <h3>SRO Check-In</h3>
-            <form action="javascript:SROSubmit()" id="SROForm">
-                <p id="SROSymptom">Symptoms: </p>
-                <input type="text" name="symptom" id="SROSymptomInput" class="textInput">
+                    <p id="GSXStepsTaken">Steps Taken: </p>
+                    <textarea rows="3" cols="60" name="stepsTaken" id="GSXStepsTakenInput"></textarea>
 
-                <p id="SROBackup">Backup: </p>
-                <input type="text" name="backup" id="SROBackupInput" class="textInput" value="Yes">
+                    <div id="GSXCosmeticDiv">
+                        <p id="GSXCosmetic">Cosmetic Condition: </p>
+                        <input type="text" name="cosmeticCondition" id="GSXCosmeticInput" class="textInput">
+                    </div>
 
-                <p id="SROTimeframe">Timeframe: </p>
-                <select id="SROTimeframeInput">
-                    <option>EOD</option>
-                    <option>2 - 3 Business Days</option>
-                    <option>3 - 5 Business Days</option>
-                    <option>5 - 7 Business Days</option>
-                    <option>1 - 2 Weeks</option>
-                    <option>Call when ready</option>
-                </select>
+                    <div id="GSXWarrantyDiv">
+                        <p id="GSXRecommended">Recommended Resolution: </p>
+                        
+                    </div>
+                    <textarea rows="3" name="recommended" id="GSXRecommendedInput"></textarea>
+                    
+                    <div id="GSXButtonDiv" class="submitButtonDiv">
+                        <button type="submit" id="GSXSubmitButton" form="GSXForm">Submit</button>
+                        <button type="button" id="GSXClearButton">Clear</button>
+                    </div>
+                </form>
 
-                <p id="SROPrice">Price: </p>
-                <input type="text" name="price" id="SROPriceInput" class="textInput" value="$">
+                <div id="GSXOutputText">
+                    
+                </div>
+            </div>
 
-                <p id="SROFirmware">Firmware: </p>
-                <select id="SROFirmwareInput">
-                    <option>Off</option>
-                    <option>On</option>
-                </select>
-                
-                <button type="submit" id="SROSubmitButton" form="SROForm">Submit</button>
-                <button type="button" id="SROClearButton">Clear</button>
-            </form>
+            <div id="SROCheckIn" class="formDiv">
+                <h3>SRO Check-In</h3>
+                <form action="javascript:SROSubmit()" id="SROForm">
+                    <p id="SROSymptom">Symptoms: </p>
+                    <textarea rows="3" name="symptom" id="SROSymptominput"></textarea>
+
+                    <div id="SROFormGrid">
+                        <p id="SROBackup">Backup: </p>
+                        <input type="text" name="backup" id="SROBackupInput" class="textInput" value="Yes">
+
+                        <p id="SROTimeframe">Timeframe: </p>
+                        <select id="SROTimeframeInput">
+                            <option>EOD</option>
+                            <option>2 - 3 Business Days</option>
+                            <option>3 - 5 Business Days</option>
+                            <option>5 - 7 Business Days</option>
+                            <option>1 - 2 Weeks</option>
+                            <option>Call when ready</option>
+                        </select>
+
+                        <p id="SROPrice">Price: </p>
+                        <input type="text" name="price" id="SROPriceInput" class="textInput" value="$">
+
+                        <p id="SROFirmware">Firmware: </p>
+                        <select id="SROFirmwareInput">
+                            <option>Off</option>
+                            <option>On</option>
+                        </select>
+                    </div>
+
+                    <div id="SROButtonDiv" class="submitButtonDiv">
+                        <button type="submit" id="SROSubmitButton" form="SROForm">Submit</button>
+                        <button type="button" id="SROClearButton">Clear</button>
+                    </div>
+
+                    <div id="SROOutputText">
+
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 </body>
