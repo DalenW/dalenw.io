@@ -43,12 +43,17 @@
 #forms {
     display: flex;
     flex-wrap: wrap;
-    -ms-flex-align: center;
+    justify-content: flex-start;
+}
+
+#GSXSideDiv {
+    width: 40%;
 }
 
 .formDiv {
     width: 35%;
     min-width: 600px;
+    height: min-content;
     margin: 20px;
     background-color: lightgray;
     border-radius: 15px;

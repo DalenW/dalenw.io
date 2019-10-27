@@ -60,36 +60,43 @@
         </div>
         
         <div id="forms">
-            <div id="GSXCheckIn" class="formDiv">
-                <h3>GSX Check-In</h3>
-                <form action="javascript:GSXSubmit()" id="GSXForm">
-                    <div id="GSXIssueDiv">
-                        <p id="GSXIssue">Issue: </p>
-                        <input type="text" name="issue" id="GSXIssueInput" class="textInput">
-                    </div>
+            <div id="GSXSideDiv">
+                <div id="GSXCheckIn" class="formDiv">
+                    <h3>GSX Check-In</h3>
+                    <form action="javascript:GSXSubmit()" id="GSXForm">
+                        <div id="GSXIssueDiv">
+                            <p id="GSXIssue">Issue: </p>
+                            <input type="text" name="issue" id="GSXIssueInput" class="textInput">
+                        </div>
 
-                    <p id="GSXStepsTaken">Steps Taken: </p>
-                    <textarea rows="3" cols="60" name="stepsTaken" id="GSXStepsTakenInput"></textarea>
+                        <p id="GSXStepsTaken">Steps Taken: </p>
+                        <textarea rows="3" cols="60" name="stepsTaken" id="GSXStepsTakenInput"></textarea>
 
-                    <div id="GSXCosmeticDiv">
-                        <p id="GSXCosmetic">Cosmetic Condition: </p>
-                        <input type="text" name="cosmeticCondition" id="GSXCosmeticInput" class="textInput">
-                    </div>
+                        <div id="GSXCosmeticDiv">
+                            <p id="GSXCosmetic">Cosmetic Condition: </p>
+                            <input type="text" name="cosmeticCondition" id="GSXCosmeticInput" class="textInput">
+                        </div>
 
-                    <div id="GSXWarrantyDiv">
-                        <p id="GSXRecommended">Recommended Resolution: </p>
+                        <div id="GSXWarrantyDiv">
+                            <p id="GSXRecommended">Recommended Resolution: </p>
+                            
+                        </div>
+                        <textarea rows="3" name="recommended" id="GSXRecommendedInput"></textarea>
+                        
+                        <div id="GSXButtonDiv" class="submitButtonDiv">
+                            <button type="submit" id="GSXSubmitButton" form="GSXForm">Submit</button>
+                            <button type="button" id="GSXClearButton">Clear</button>
+                        </div>
+                    </form>
+
+                    <div id="GSXOutputText">
                         
                     </div>
-                    <textarea rows="3" name="recommended" id="GSXRecommendedInput"></textarea>
-                    
-                    <div id="GSXButtonDiv" class="submitButtonDiv">
-                        <button type="submit" id="GSXSubmitButton" form="GSXForm">Submit</button>
-                        <button type="button" id="GSXClearButton">Clear</button>
-                    </div>
-                </form>
+                </div>
 
-                <div id="GSXOutputText">
-                    
+                <div id="additionalInfoDiv" class="formDiv">
+                    <h3>Additional Information</h3>
+                    <div id="additionalInfo"></div>
                 </div>
             </div>
 
