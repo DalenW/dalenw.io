@@ -1,15 +1,25 @@
 //on page load clear the forms
-clearGSX();
-clearSRO();
-resetRepairTree();
+fullReset();
 
 var repairVal = "N";
 var deviceSelect = false;
+var additionalInfo = false;
+
+function fullReset() {
+    clearGSX();
+    clearSRO();
+    resetRepairTree();
+
+    repairVal = "N";
+    deviceSelect = false;
+    additionalInfo = false;
+}
 
 function resetRepairTree() {
     $("#commonSelect").val("None");
     $("#deviceSelectDiv").hide();
     $('#warrantyCheck').prop('checked', true);
+    $("#additionalInfoDiv").hide();
 }
 
 $("#forms").change(function () {
@@ -49,12 +59,14 @@ $("#commonSelect").change(function () {
     if(repairVal == "N") { //reset everything
         reset(true);
         deviceSelection(false);
+        additionalInfoToggle(false);
     }
 
     //iphone display replacement
     if(repairVal == "1") { 
         reset(false);
         deviceSelection(true);
+        additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Display is cracked and needs to be replced.");
         $("#SROBackupInput").val("Yes");
@@ -76,6 +88,7 @@ $("#commonSelect").change(function () {
     if(repairVal == "2") { 
         reset(false);
         deviceSelection(true);
+        additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Battery fails diagnostics and needs to be replced.");
         $("#SROBackupInput").val("Yes");
@@ -96,6 +109,7 @@ $("#commonSelect").change(function () {
     if(repairVal == "3") { 
         reset(false);
         deviceSelection(false);
+        additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Malware Removal");
         $("#SROBackupInput").val("Yes");
@@ -110,6 +124,7 @@ $("#commonSelect").change(function () {
     if(repairVal == "4") { 
         reset(false);
         deviceSelection(false);
+        additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Wipe and reinstall macOS Catalina.");
         $("#SROBackupInput").val("NA");
@@ -124,6 +139,7 @@ $("#commonSelect").change(function () {
     if(repairVal == "5") { 
         reset(true);
         deviceSelection(false);
+        additionalInfoToggle(false);
 
         $("#SROSymptominput").val("iPhone 7 No Service REP");
         $("#SROBackupInput").val("Yes");
@@ -144,6 +160,7 @@ $("#commonSelect").change(function () {
     if(repairVal == "6") { 
         reset(true);
         deviceSelection(false);
+        additionalInfoToggle(false);
 
         $("#SROSymptominput").val("iPhone X ghost touch display REP");
         $("#SROBackupInput").val("Yes");
@@ -164,6 +181,7 @@ $("#commonSelect").change(function () {
     if(repairVal == "7") {
         reset(true);
         deviceSelection(false);
+        additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Keyboard REP. The keys having issues are ");
         $("#SROBackupInput").val("Yes");
@@ -184,6 +202,7 @@ $("#commonSelect").change(function () {
     if(repairVal == "8") { 
         reset(true);
         deviceSelection(false);
+        additionalInfoToggle(true);
 
         $("#SROSymptominput").val("Battery REP. The battery needs to be replaced.");
         $("#SROBackupInput").val("Yes");
@@ -195,6 +214,9 @@ $("#commonSelect").change(function () {
         $("#GSXStepsTakenInput").val("Verified the issue. The device is under the recall and requires a battery replacement.");
         $("#GSXCosmeticInput").val('Marks and dings');
         $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend replacing the Top Case.");
+
+        $("#additionalInfo").html("661-02536<br>923-03545");
+
 
         SROSubmit();
         GSXSubmit();
@@ -216,14 +238,14 @@ $("#deviceSelect").change(function () {
         } else if(value == "4") { //XR
             $("#SROPriceInput").val("$227 + tax");
         } else if(value == "5") { //X
-            $("#SROPriceInput").val("$idk + tax");
+            $("#SROPriceInput").val("$307 + tax");
         } else if(value == "6") { //XSMax
-            $("#SROPriceInput").val("$idk + tax");
+            $("#SROPriceInput").val("$357 + tax");
         }
 
         //quick warranty check
         if($("#warrantyCheck").is(":checked")) {
-            $("#SROPriceInput").val("$31.10 with tax");
+            $("#SROPriceInput").val("$29.00 plus tax");
         }
     }
 
@@ -235,6 +257,7 @@ $("#deviceSelect").change(function () {
             $("#SROPriceInput").val("$127 + tax");
         }
     }
+    SROSubmit();
 });
 
 function reset(warranty) {
@@ -258,6 +281,17 @@ function deviceSelection(toggle) {
         deviceSelect = true;
     }
     $("#deviceSelect").val("2. iPhone 6s, 7, 8");
+}
+
+function additionalInfoToggle(toggle) {
+    if(additionalInfo && !toggle) {
+        $("#additionalInfoDiv").fadeOut();
+        additionalInfo = false;
+    }
+    if(!additionalInfo && toggle) {
+        $("#additionalInfoDiv").fadeIn();
+        additionalInfo = true;
+    }
 }
 
 function GSXSubmit() {
@@ -319,11 +353,14 @@ function clearSRO() {
 
 //action for the buttons
 $(document).ready(function() {
-    $("#SROClearButton").click(function(){
+    $("#SROClearButton").click(function() {
         clearSRO();
     });
 
-    $("#GSXClearButton").click(function(){
+    $("#GSXClearButton").click(function() {
         clearGSX();
-    }); 
+    });
+    $("#resetButton").click(function() {
+        fullReset();
+    });
 });

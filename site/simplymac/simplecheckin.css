@@ -1,27 +1,47 @@
+main {
+    padding-left: 0px;
+}
+
 #repairTree {
-    width: 80%;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 40%  30% 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#repairTree>div {
+    width: min-content;
+    margin-bottom: 10px;
 }
 
 #commonSelectDiv {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 150px 325px;
-    text-align: right;
 }
  #deviceSelectDiv {
      display: grid;
      grid-template-rows: auto;
      grid-template-columns: 100px 250px;
-     text-align: right;
  }
 
 #warrantyDiv {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 150px 25px;
+    grid-template-columns: 175px 25px;
+}
+
+#warrantyTitle,#deviceSelectTitle,#commonTitle {
+    text-align: right;
+}
+
+#resetButton {
+    width: min-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 25px;
+    height: min-content;
+    
 }
 
 #repairTree select {
@@ -36,21 +56,22 @@
     width: 100%;
 }
 
-.checkbox {
-    width: 50px;
-}
-
 #forms {
     display: flex;
     flex-wrap: wrap;
-    -ms-flex-align: center;
+    justify-content: center;
+}
+
+#GSXSideDiv,#SROSideDiv {
+    width: 40vw;
+    min-width: 500px;
 }
 
 .formDiv {
-    width: 35%;
-    min-width: 600px;
+    width: 90%;
+    height: min-content;
     margin: 20px;
-    background-color: lightgray;
+    background-color: rgb(221, 221, 221);
     border-radius: 15px;
     padding: 15px;
 }
@@ -95,7 +116,7 @@
     margin-top: 10px;
 }
 
-button {
+#forms button {
     width: 80%;
     margin-left: 10%;
 }
@@ -111,6 +132,10 @@ form input {
     padding-left: 5px;
 }
 
+textarea {
+    padding-left: 5px;
+}
+
 #SROFormGrid {
     display: grid;
     grid-template-rows: 40px;
@@ -123,4 +148,10 @@ form input {
 
 #SROForm input {
     width: 225px;
+}
+
+@media screen and (max-width: 1000px) {
+    #GSXSideDiv,#SROSideDiv {
+        width: 80vw;
+    }
 }
