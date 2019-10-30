@@ -6,7 +6,6 @@
     <title>Simple Check-In</title>
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link type="text/css" rel="stylesheet" href="/styles/main.css">
     <link type="text/css" rel="stylesheet" href="operations.css">
     <link rel="stylesheet" href="simplecheckin.css">
@@ -57,6 +56,8 @@
                 <p id="warrantyTitle">Repair In Warranty?</p>
                 <input type="checkbox" name="warranty" id="warrantyCheck" class="checkbox" checked>
             </div>
+
+            <button type="button" id="resetButton">Reset</button>
         </div>
         
         <div id="forms">
@@ -100,45 +101,47 @@
                 </div>
             </div>
 
-            <div id="SROCheckIn" class="formDiv">
-                <h3>SRO Check-In</h3>
-                <form action="javascript:SROSubmit()" id="SROForm">
-                    <p id="SROSymptom">Symptoms: </p>
-                    <textarea rows="3" name="symptom" id="SROSymptominput"></textarea>
+            <div id="SROSideDiv">
+                <div id="SROCheckIn" class="formDiv">
+                    <h3>SRO Check-In</h3>
+                    <form action="javascript:SROSubmit()" id="SROForm">
+                        <p id="SROSymptom">Symptoms: </p>
+                        <textarea rows="3" name="symptom" id="SROSymptominput"></textarea>
 
-                    <div id="SROFormGrid">
-                        <p id="SROBackup">Backup: </p>
-                        <input type="text" name="backup" id="SROBackupInput" class="textInput" value="Yes">
+                        <div id="SROFormGrid">
+                            <p id="SROBackup">Backup: </p>
+                            <input type="text" name="backup" id="SROBackupInput" class="textInput" value="Yes">
 
-                        <p id="SROTimeframe">Timeframe: </p>
-                        <select id="SROTimeframeInput">
-                            <option>EOD</option>
-                            <option>2 - 3 Business Days</option>
-                            <option>3 - 5 Business Days</option>
-                            <option>5 - 7 Business Days</option>
-                            <option>1 - 2 Weeks</option>
-                            <option>Call when ready</option>
-                        </select>
+                            <p id="SROTimeframe">Timeframe: </p>
+                            <select id="SROTimeframeInput">
+                                <option>EOD</option>
+                                <option>2 - 3 Business Days</option>
+                                <option>3 - 5 Business Days</option>
+                                <option>5 - 7 Business Days</option>
+                                <option>1 - 2 Weeks</option>
+                                <option>Call when ready</option>
+                            </select>
 
-                        <p id="SROPrice">Price: </p>
-                        <input type="text" name="price" id="SROPriceInput" class="textInput" value="$">
+                            <p id="SROPrice">Price: </p>
+                            <input type="text" name="price" id="SROPriceInput" class="textInput" value="$">
 
-                        <p id="SROFirmware">Firmware: </p>
-                        <select id="SROFirmwareInput">
-                            <option>Off</option>
-                            <option>On</option>
-                        </select>
-                    </div>
+                            <p id="SROFirmware">Firmware: </p>
+                            <select id="SROFirmwareInput">
+                                <option>Off</option>
+                                <option>On</option>
+                            </select>
+                        </div>
 
-                    <div id="SROButtonDiv" class="submitButtonDiv">
-                        <button type="submit" id="SROSubmitButton" form="SROForm">Submit</button>
-                        <button type="button" id="SROClearButton">Clear</button>
-                    </div>
+                        <div id="SROButtonDiv" class="submitButtonDiv">
+                            <button type="submit" id="SROSubmitButton" form="SROForm">Submit</button>
+                            <button type="button" id="SROClearButton">Clear</button>
+                        </div>
 
-                    <div id="SROOutputText">
+                        <div id="SROOutputText">
 
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>

@@ -1,11 +1,19 @@
 //on page load clear the forms
-clearGSX();
-clearSRO();
-resetRepairTree();
+fullReset();
 
 var repairVal = "N";
 var deviceSelect = false;
 var additionalInfo = false;
+
+function fullReset() {
+    clearGSX();
+    clearSRO();
+    resetRepairTree();
+
+    repairVal = "N";
+    deviceSelect = false;
+    additionalInfo = false;
+}
 
 function resetRepairTree() {
     $("#commonSelect").val("None");
@@ -36,6 +44,7 @@ $("#warrantyCheck").change(function () {
     } else if(repairVal == "1") {
         if($("#warrantyCheck").is(":checked")) {
             $("#SROPriceInput").val("$31.10 with tax");
+            SROSubmit();
         }
     }
 });
@@ -60,7 +69,7 @@ $("#commonSelect").change(function () {
         deviceSelection(true);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("Display is cracked and needs to be replced.");
+        $("#SROSymptominput").val("Display is cracked and needs to be replaced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
         $("#SROPriceInput").val("$177 + tax");
@@ -345,11 +354,14 @@ function clearSRO() {
 
 //action for the buttons
 $(document).ready(function() {
-    $("#SROClearButton").click(function(){
+    $("#SROClearButton").click(function() {
         clearSRO();
     });
 
-    $("#GSXClearButton").click(function(){
+    $("#GSXClearButton").click(function() {
         clearGSX();
-    }); 
+    });
+    $("#resetButton").click(function() {
+        fullReset();
+    });
 });
