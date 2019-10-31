@@ -75,7 +75,7 @@ $("#commonSelect").change(function () {
         $("#SROPriceInput").val("$177 + tax");
         $("#SROFirmwareInput").val("Off");
 
-        $("#GSXIssueInput").val("Display is cracked and needs to be replced.");
+        $("#GSXIssueInput").val("Display is cracked and needs to be replaced.");
         $("#GSXStepsTakenInput").val("Verified the issue. Ran MRI and everything else passed. Device enclosure is fine and the display can be replaced.");
         $("#GSXCosmeticInput").val('Marks and dings, cracked display.');
         $("#GSXRecommendedInput").val("Device is eligible for Out of Warranty repair according to the VMI Guide. Recommend replacing the display.");
@@ -216,7 +216,7 @@ $("#commonSelect").change(function () {
         $("#GSXCosmeticInput").val('Marks and dings');
         $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend replacing the Top Case.");
 
-        $("#additionalInfo").html("661-02536<br>923-03545");
+        $("#additionalInfo").html("661-02536<br>923-03454");
 
 
         SROSubmit();
