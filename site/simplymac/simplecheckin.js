@@ -24,6 +24,7 @@ $("#warrantyCheck").change(function () {
     } else if(repairVal == "1") {
         if($("#warrantyCheck").is(":checked")) {
             $("#SROPriceInput").val("$31.10 with tax");
+            SROSubmit();
         }
     } else if(repairVal == "2") {
         if($("#warrantyCheck").is(":checked")) {
