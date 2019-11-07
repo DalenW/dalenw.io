@@ -2,31 +2,11 @@
 fullReset();
 
 var repairVal = "N";
-var deviceSelect = false;
+var optionSelect = false;
 var additionalInfo = false;
 
-function fullReset() {
-    clearGSX();
-    clearSRO();
-    resetRepairTree();
-
-    repairVal = "N";
-    deviceSelect = false;
-    additionalInfo = false;
-}
-
-function resetRepairTree() {
-    $("#commonSelect").val("None");
-    $("#deviceSelectDiv").hide();
-    $('#warrantyCheck').prop('checked', true);
-    $("#additionalInfoDiv").hide();
-}
-
-$("#forms").change(function () {
-    $("#commonSelect").val("None");
-    repairVal = "N";
-    deviceSelection(false);
-})
+var optionPhonesHTML = "<option>1. iPhone SE</option><option>2. iPhone 6s, 7, 8</option><option>3. iPhone 6s+, 7+, 8+</option><option>4. iPhone XR, 11</option><option>5. iPhone X, XS, 11 Pro</option><option>6. iPhone XS Max, 11 Pro Max</option>";
+var optionBootHTML = "<option>1. Flashing Folder</option><option>2. Stuck Loading Bar</option><option>3. Cross-Out Symbol</option>"
 
 $("#warrantyCheck").change(function () {
     if($("#warrantyCheck").is(":checked")) {
@@ -45,10 +25,14 @@ $("#warrantyCheck").change(function () {
         if($("#warrantyCheck").is(":checked")) {
             $("#SROPriceInput").val("$31.10 with tax");
         }
+    } else if(repairVal == "2") {
+        if($("#warrantyCheck").is(":checked")) {
+            $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend replacing the battery.");
+        }
     }
+    SROSubmit();
+    GSXSubmit();
 });
-
-
 
 $("#commonSelect").change(function () {
     repairVal = $("#commonSelect option:selected").val();
@@ -58,23 +42,34 @@ $("#commonSelect").change(function () {
 
     if(repairVal == "N") { //reset everything
         reset(true);
-        deviceSelection(false);
+        optionSelection(false);
         additionalInfoToggle(false);
+    }
+
+    //set repair option selection
+    if(repairVal == "1" || repairVal == "2") {
+        $("#optionSelect").html(optionPhonesHTML);
+        $("#optionSelectTitle").html("Device: ");
+        $("#optionSelect").val("2. iPhone 6s, 7, 8");
+    } else if(repairVal == "4") {
+        $("#optionSelect").html(optionBootHTML);
+        $("#optionSelectTitle").html("Option: ");
+        $("#optionSelect").val("1. Flashing Folder");
     }
 
     //iphone display replacement
     if(repairVal == "1") { 
         reset(false);
-        deviceSelection(true);
+        optionSelection(true);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("Display is cracked and needs to be replced.");
+        $("#SROSymptominput").val("Display is cracked and needs to be replaced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
         $("#SROPriceInput").val("$177 + tax");
         $("#SROFirmwareInput").val("Off");
 
-        $("#GSXIssueInput").val("Display is cracked and needs to be replced.");
+        $("#GSXIssueInput").val("Display is cracked and needs to be replaced.");
         $("#GSXStepsTakenInput").val("Verified the issue. Ran MRI and everything else passed. Device enclosure is fine and the display can be replaced.");
         $("#GSXCosmeticInput").val('Marks and dings, cracked display.');
         $("#GSXRecommendedInput").val("Device is eligible for Out of Warranty repair according to the VMI Guide. Recommend replacing the display.");
@@ -87,7 +82,7 @@ $("#commonSelect").change(function () {
     //iphone battery replacement
     if(repairVal == "2") { 
         reset(false);
-        deviceSelection(true);
+        optionSelection(true);
         additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Battery fails diagnostics and needs to be replced.");
@@ -108,7 +103,7 @@ $("#commonSelect").change(function () {
     //malware removal
     if(repairVal == "3") { 
         reset(false);
-        deviceSelection(false);
+        optionSelection(false);
         additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Malware Removal");
@@ -120,13 +115,13 @@ $("#commonSelect").change(function () {
         SROSubmit();
     }
 
-    //wipe and reinstall
+    //boot issues
     if(repairVal == "4") { 
         reset(false);
-        deviceSelection(false);
+        optionSelection(true);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("Wipe and reinstall macOS Catalina.");
+        $("#SROSymptominput").val("Boot issues.");
         $("#SROBackupInput").val("NA");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
         $("#SROPriceInput").val("$75.06 with tax");
@@ -138,7 +133,7 @@ $("#commonSelect").change(function () {
     //iphone no service rep
     if(repairVal == "5") { 
         reset(true);
-        deviceSelection(false);
+        optionSelection(false);
         additionalInfoToggle(false);
 
         $("#SROSymptominput").val("iPhone 7 No Service REP");
@@ -159,7 +154,7 @@ $("#commonSelect").change(function () {
     //iphone x display rep
     if(repairVal == "6") { 
         reset(true);
-        deviceSelection(false);
+        optionSelection(false);
         additionalInfoToggle(false);
 
         $("#SROSymptominput").val("iPhone X ghost touch display REP");
@@ -180,7 +175,7 @@ $("#commonSelect").change(function () {
     //mac keyboard rep
     if(repairVal == "7") {
         reset(true);
-        deviceSelection(false);
+        optionSelection(false);
         additionalInfoToggle(false);
 
         $("#SROSymptominput").val("Keyboard REP. The keys having issues are ");
@@ -201,7 +196,7 @@ $("#commonSelect").change(function () {
     //mac battery rep
     if(repairVal == "8") { 
         reset(true);
-        deviceSelection(false);
+        optionSelection(false);
         additionalInfoToggle(true);
 
         $("#SROSymptominput").val("Battery REP. The battery needs to be replaced.");
@@ -215,7 +210,7 @@ $("#commonSelect").change(function () {
         $("#GSXCosmeticInput").val('Marks and dings');
         $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend replacing the Top Case.");
 
-        $("#additionalInfo").html("661-02536<br>923-03545");
+        $("#additionalInfo").html("661-02536<br>923-03454");
 
 
         SROSubmit();
@@ -223,26 +218,40 @@ $("#commonSelect").change(function () {
     }
 });
 
-$("#deviceSelect").change(function () {
-    var value = $("#deviceSelect option:selected").val();
+$("#optionSelect").change(function () {
+    var value = $("#optionSelect option:selected").val();
     value = value.slice(0, 1);
+    value = parseInt(value, 10);
+    console.log(value);
+
 
     //iphone display
     if(repairVal == "1") {
-        if(value == "1") { //se
-            $("#SROPriceInput").val("$157 + tax");
-        } else if(value == "2") { //6s
-            $("#SROPriceInput").val("$177 + tax");
-        } else if(value == "3") { //6s+
-            $("#SROPriceInput").val("$197 + tax");
-        } else if(value == "4") { //XR
-            $("#SROPriceInput").val("$227 + tax");
-        } else if(value == "5") { //X
-            $("#SROPriceInput").val("$307 + tax");
-        } else if(value == "6") { //XSMax
-            $("#SROPriceInput").val("$357 + tax");
-        }
 
+        switch (value) {
+            case 1:
+                $("#SROPriceInput").val("$157 + tax");
+                break;
+            case 2:
+                $("#SROPriceInput").val("$177 + tax");
+                break;
+            case 3:
+                $("#SROPriceInput").val("$197 + tax");
+                break;
+            case 4:
+                $("#SROPriceInput").val("$227 + tax");
+                break;
+            case 5:
+                $("#SROPriceInput").val("$307 + tax");
+                break;
+            case 6:
+                $("#SROPriceInput").val("$357 + tax");
+                break;
+            default:
+                $("#SROPriceInput").val("$177 + tax");
+                break;
+        }
+        
         //quick warranty check
         if($("#warrantyCheck").is(":checked")) {
             $("#SROPriceInput").val("$29.00 plus tax");
@@ -251,10 +260,36 @@ $("#deviceSelect").change(function () {
 
     //iphone battery
     if(repairVal == "2") {
-        if(value == "1" || value == "2" || value == "3") {
-            $("#SROPriceInput").val("$82.04 with tax");
-        } else if(value == "4" || value == "5" || value == "6"){
-            $("#SROPriceInput").val("$127 + tax");
+        switch (value) {
+            case 1:
+            case 2:
+            case 3:
+                $("#SROPriceInput").val("$82.04 with tax");
+                break;
+            case 4:
+            case 5:
+            case 6:
+                $("#SROPriceInput").val("$127 + tax");
+                break;
+        }
+    }
+
+    //boot issues
+    if (repairVal == "4") {
+        switch (value) {
+            case 1:
+                $("#SROSymptominput").val("Boots to a flashing folder.");
+                break;
+            case 2:
+                $("#SROSymptominput").val("Loading bar is stuck during boot.");
+                break;
+            case 3:
+                $("#SROSymptominput").val("Boots to a cross-out symbol.");
+                break;
+        
+            default:
+                $("#SROSymptominput").val("Boots to a flashing folder.");
+                break;
         }
     }
     SROSubmit();
@@ -271,16 +306,15 @@ function reset(warranty) {
     }
 }
 
-function deviceSelection(toggle) {
-    if(deviceSelect && !toggle) {
-        $("#deviceSelectDiv").fadeOut();
-        deviceSelect = false;
+function optionSelection(toggle) {
+    if(optionSelect && !toggle) {
+        $("#optionSelectDiv").fadeOut();
+        optionSelect = false;
     }
-    if(!deviceSelect && toggle) {
-        $("#deviceSelectDiv").fadeIn();
-        deviceSelect = true;
+    if(!optionSelect && toggle) {
+        $("#optionSelectDiv").fadeIn();
+        optionSelect = true;
     }
-    $("#deviceSelect").val("2. iPhone 6s, 7, 8");
 }
 
 function additionalInfoToggle(toggle) {
@@ -308,6 +342,7 @@ function GSXSubmit() {
     text += $("#GSXRecommendedInput").val();
 
     $("#GSXOutputText").html(text);
+    $("#GSXOutputText").css('margin-top', '25px');
     console.log("Submitted GSX Form");
 }
 
@@ -329,6 +364,7 @@ function SROSubmit() {
     text += "<br>";
 
     $("#SROOutputText").html(text);
+    $("#SROOutputText").css('margin-top', '25px');
     console.log("Submitted SRO Form");
 }
 
@@ -338,6 +374,7 @@ function clearGSX() {
     $("#GSXCosmeticInput").val('Marks and dings');
     $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend replacing the PART.");
     $("#GSXOutputText").html("");
+    $("#GSXOutputText").css('margin-top', '0px');
     console.log("Cleared GSX Form");
 }
 
@@ -348,8 +385,40 @@ function clearSRO() {
     $("#SROPriceInput").val("$");
     $("#SROFirmwareInput").val("Off");
     $("#SROOutputText").html("");
+    $("#SROOutputText").css('margin-top', '0px');
     console.log("Cleared SRO Form");
 }
+
+function fullReset() {
+    clearGSX();
+    clearSRO();
+    resetRepairTree();
+
+    repairVal = "N";
+    optionSelect = false;
+    additionalInfo = false;
+}
+
+function resetRepairTree() {
+    $("#commonSelect").val("None");
+    $("#optionSelectDiv").hide();
+    $('#warrantyCheck').prop('checked', true);
+    $("#additionalInfoDiv").hide();
+}
+
+$("#forms").change(function () {
+    $("#commonSelect").val("None");
+    repairVal = "N";
+    optionSelection(false);
+});
+
+$("#GSXCheckIn").change(function (){
+    GSXSubmit();
+});
+
+$("#SROCheckIn").change(function (){
+    SROSubmit();
+});
 
 //action for the buttons
 $(document).ready(function() {

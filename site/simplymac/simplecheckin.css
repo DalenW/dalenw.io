@@ -19,7 +19,7 @@ main {
     grid-template-rows: auto;
     grid-template-columns: 150px 325px;
 }
- #deviceSelectDiv {
+ #optionSelectDiv {
      display: grid;
      grid-template-rows: auto;
      grid-template-columns: 100px 250px;
@@ -31,7 +31,7 @@ main {
     grid-template-columns: 175px 25px;
 }
 
-#warrantyTitle,#deviceSelectTitle,#commonTitle {
+#warrantyTitle,#optionSelectTitle,#commonTitle {
     text-align: right;
 }
 
@@ -148,6 +148,10 @@ textarea {
 
 #SROForm input {
     width: 225px;
+}
+
+#SRONotesDiv>p {
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 1000px) {
