@@ -36,14 +36,14 @@
                     <option>6. iPhone X Display REP</option>
                     <option>7. MacBook Keyboard REP</option>
                     <option>8. MacBook Pro 15'' Battery REP</option>
-                    
+
                 </select>
             </div>
 
             <div id="optionSelectDiv">
                 <p id="optionSelectTitle">Option:</p>
                 <select id="optionSelect">
-                    
+
                 </select>
             </div>
 
@@ -54,12 +54,12 @@
 
             <button type="button" id="resetButton">Reset</button>
         </div>
-        
+
         <div id="forms">
             <div id="GSXSideDiv">
                 <div id="GSXCheckIn" class="formDiv">
                     <h3>GSX Check-In</h3>
-                    <form action="javascript:GSXSubmit()" id="GSXForm">
+                    <form action="javascript:GSXCopySubmission()" id="GSXForm">
                         <div id="GSXIssueDiv">
                             <p id="GSXIssue">Issue: </p>
                             <input type="text" name="issue" id="GSXIssueInput" class="textInput">
@@ -75,10 +75,10 @@
 
                         <div id="GSXWarrantyDiv">
                             <p id="GSXRecommended">Recommended Resolution: </p>
-                            
+
                         </div>
                         <textarea rows="3" name="recommended" id="GSXRecommendedInput"></textarea>
-                        
+
                         <div id="GSXButtonDiv" class="submitButtonDiv">
                             <button type="submit" id="GSXSubmitButton" form="GSXForm">Submit</button>
                             <button type="button" id="GSXClearButton">Clear</button>
@@ -86,7 +86,7 @@
                     </form>
 
                     <div id="GSXOutputText">
-                        
+
                     </div>
                 </div>
 
@@ -99,9 +99,9 @@
             <div id="SROSideDiv">
                 <div id="SROCheckIn" class="formDiv">
                     <h3>SRO Check-In</h3>
-                    <form action="javascript:SROSubmit()" id="SROForm">
+                    <form action="javascript:SROCopySubmission()" id="SROForm">
                         <p id="SROSymptom">Symptoms: </p>
-                        <textarea rows="3" name="symptom" id="SROSymptominput"></textarea>
+                        <textarea rows="3" name="symptom" id="SROSymptomInput"></textarea>
 
                         <div id="SROFormGrid">
                             <p id="SROBackup">Backup: </p>
@@ -143,7 +143,8 @@
 
                     <p>Called and spoke with customer, </p>
                     <p>Called and spoke with customer, let them know that their device is ready to be picked up.</p>
-                    <p>Called customer and left a voicemail notifying them that their device is ready to be picked up.</p>
+                    <p>Called customer and left a voicemail notifying them that their device is ready to be picked up.
+                    </p>
                     <p>Removed all malware from the device and it is running a lot better.</p>
                     <p>Performed an archive install of macOS, computer is booting normally.</p>
                     <p>Reformatted drive and installed macOS.</p>
@@ -155,9 +156,7 @@
 </body>
 
 <script src="/scripts/jquery.js"></script>
+<script src="/scripts/clipboard-polyfill.promise.js"></script>
 <script src="simplecheckin.js"></script>
-<script>
-
-</script>
 
 </html>

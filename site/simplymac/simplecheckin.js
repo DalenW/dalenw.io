@@ -5,6 +5,9 @@ var repairVal = "N";
 var optionSelect = false;
 var additionalInfo = false;
 
+var SROSubmission = "";
+var GSXSubmission = "";
+
 var optionPhonesHTML = "<option>1. iPhone SE</option><option>2. iPhone 6s, 7, 8</option><option>3. iPhone 6s+, 7+, 8+</option><option>4. iPhone XR, 11</option><option>5. iPhone X, XS, 11 Pro</option><option>6. iPhone XS Max, 11 Pro Max</option>";
 var optionBootHTML = "<option>1. Flashing Folder</option><option>2. Stuck Loading Bar</option><option>3. Cross-Out Symbol</option>"
 
@@ -62,9 +65,9 @@ $("#commonSelect").change(function () {
     if(repairVal == "1") { 
         reset(false);
         optionSelection(true);
-        additionalInfoToggle(false);
+        additionalInfoToggle(true);
 
-        $("#SROSymptominput").val("Display is cracked and needs to be replaced.");
+        $("#SROSymptomInput").val("Display is cracked and needs to be replaced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
         $("#SROPriceInput").val("$177 + tax");
@@ -74,6 +77,8 @@ $("#commonSelect").change(function () {
         $("#GSXStepsTakenInput").val("Verified the issue. Ran MRI and everything else passed. Device enclosure is fine and the display can be replaced.");
         $("#GSXCosmeticInput").val('Marks and dings, cracked display.');
         $("#GSXRecommendedInput").val("Device is eligible for Out of Warranty repair according to the VMI Guide. Recommend replacing the display.");
+
+        $("#additionalInfo").html("<p><h3>6s Displays</h3><br><b>Space Gray</b><p>661-07285</p><b>Silver</b><p>661-07286</p><b>Gold</b><p>661-07287</p><b>Rose Gold</b><p>661-07288</p><br><h3>7 Displays</h3><br><b>Black, Jet Black</b><p>661-07293</p><b>Silver, Red</b><p>661-07294</p><b>Gold</b><p>661-07295</p><b>Rose Gold</b><p>661-07296</p><br><h3>8 Displays</h3><br><b>Space Gray</b><p>661-08933</p><b>Silver</b><p>661-08934</p><b>Gold</b><p>661-09081</p><b>Red</b><p>661-10102</p></p>");
 
         SROSubmit();
         GSXSubmit();
@@ -86,7 +91,7 @@ $("#commonSelect").change(function () {
         optionSelection(true);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("Battery fails diagnostics and needs to be replced.");
+        $("#SROSymptomInput").val("Battery fails diagnostics and needs to be replced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
         $("#SROPriceInput").val("$82.04 with tax");
@@ -107,7 +112,7 @@ $("#commonSelect").change(function () {
         optionSelection(false);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("Malware Removal");
+        $("#SROSymptomInput").val("Malware Removal");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
         $("#SROPriceInput").val("$75.06 with tax");
@@ -122,7 +127,7 @@ $("#commonSelect").change(function () {
         optionSelection(true);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("Boot issues.");
+        $("#SROSymptomInput").val("Boots to a flashing folder.");
         $("#SROBackupInput").val("NA");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
         $("#SROPriceInput").val("$75.06 with tax");
@@ -137,7 +142,7 @@ $("#commonSelect").change(function () {
         optionSelection(false);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("iPhone 7 No Service REP");
+        $("#SROSymptomInput").val("iPhone 7 No Service REP");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("1 - 2 Weeks");
         $("#SROPriceInput").val("REP");
@@ -156,9 +161,9 @@ $("#commonSelect").change(function () {
     if(repairVal == "6") { 
         reset(true);
         optionSelection(false);
-        additionalInfoToggle(false);
+        additionalInfoToggle(true);
 
-        $("#SROSymptominput").val("iPhone X ghost touch display REP");
+        $("#SROSymptomInput").val("iPhone X ghost touch display REP");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
         $("#SROPriceInput").val("REP");
@@ -168,6 +173,8 @@ $("#commonSelect").change(function () {
         $("#GSXStepsTakenInput").val("Verified the issue. Ran MRI, multi-touch diagnostics failed.");
         $("#GSXCosmeticInput").val('Marks and dings');
         $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend replacing the display.");
+
+        $("#additionalInfo").html("661-13114");
 
         SROSubmit();
         GSXSubmit();
@@ -179,7 +186,7 @@ $("#commonSelect").change(function () {
         optionSelection(false);
         additionalInfoToggle(false);
 
-        $("#SROSymptominput").val("Keyboard REP. The keys having issues are ");
+        $("#SROSymptomInput").val("Keyboard REP. The keys having issues are ");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("5 - 7 Business Days");
         $("#SROPriceInput").val("REP");
@@ -200,7 +207,7 @@ $("#commonSelect").change(function () {
         optionSelection(false);
         additionalInfoToggle(true);
 
-        $("#SROSymptominput").val("Battery REP. The battery needs to be replaced.");
+        $("#SROSymptomInput").val("Battery REP. The battery needs to be replaced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("5 - 7 Business Days");
         $("#SROPriceInput").val("REP");
@@ -232,21 +239,27 @@ $("#optionSelect").change(function () {
         switch (value) {
             case 1:
                 $("#SROPriceInput").val("$157 + tax");
+                additionalInfoToggle(false);
                 break;
             case 2:
                 $("#SROPriceInput").val("$177 + tax");
+                $("#additionalInfo").html("<p><h3>6s Displays</h3><br><b>Space Gray</b><p>661-07285</p><b>Silver</b><p>661-07286</p><b>Gold</b><p>661-07287</p><b>Rose Gold</b><p>661-07288</p><br><h3>7 Displays</h3><br><b>Black, Jet Black</b><p>661-07293</p><b>Silver, Red</b><p>661-07294</p><b>Gold</b><p>661-07295</p><b>Rose Gold</b><p>661-07296</p><br><h3>8 Displays</h3><br><b>Space Gray</b><p>661-08933</p><b>Silver</b><p>661-08934</p><b>Gold</b><p>661-09081</p><b>Red</b><p>661-10102</p></p>");
                 break;
             case 3:
                 $("#SROPriceInput").val("$197 + tax");
+                $("#additionalInfo").html("<p><h3>6s+ Displays</h3><br><b>Space Gray</b><p>661-07293</p><b>Silver</b><p>661-07294</p><b>Gold</b><p>661-07295</p><b>Rose Gold</b><p>661-07296</p><br><h3>7+ Displays</h3><br><b>Black, Jet Black</b><p>661-07297</p><b>Silver, Red</b><p>661-07298</p><b>Gold</b><p>661-07299</p><b>Rose Gold</b><p>661-07300</p>br><h3>8+ Displays</h3><br><b>Space Gray</b><p>661-09032</p><b>Silver</b><p>661-09033</p><b>Gold</b><p>661-09034</p><b>Red</b><p>661-10103</p></p>");
                 break;
             case 4:
                 $("#SROPriceInput").val("$227 + tax");
+                $("#additionalInfo").html("<p><b>XR Display</b><p>661-13114</p><br><b>11 Display</b><p>661-14098</p></p>");
                 break;
             case 5:
                 $("#SROPriceInput").val("$307 + tax");
+                $("#additionalInfo").html("<p><b>X Display</b><p>661-13114</p><br><b>XS Display</b><p>661-10608</p><br><b>11 Pro Display</b><p>661-14096</p></p>");
                 break;
             case 6:
                 $("#SROPriceInput").val("$357 + tax");
+                $("#additionalInfo").html("<p><b>XS Max Display</b><p>661-11037</p><br><b>11 Pro Max Display</b><p>661-14099</p></p>");
                 break;
             default:
                 $("#SROPriceInput").val("$177 + tax");
@@ -279,17 +292,17 @@ $("#optionSelect").change(function () {
     if (repairVal == "4") {
         switch (value) {
             case 1:
-                $("#SROSymptominput").val("Boots to a flashing folder.");
+                $("#SROSymptomInput").val("Boots to a flashing folder.");
                 break;
             case 2:
-                $("#SROSymptominput").val("Loading bar is stuck during boot.");
+                $("#SROSymptomInput").val("Loading bar is stuck during boot.");
                 break;
             case 3:
-                $("#SROSymptominput").val("Boots to a cross-out symbol.");
+                $("#SROSymptomInput").val("Boots to a cross-out symbol.");
                 break;
         
             default:
-                $("#SROSymptominput").val("Boots to a flashing folder.");
+                $("#SROSymptomInput").val("Boots to a flashing folder.");
                 break;
         }
     }
@@ -343,13 +356,22 @@ function GSXSubmit() {
     text += $("#GSXRecommendedInput").val();
 
     $("#GSXOutputText").html(text);
+    GSXSubmission = text;
+
     $("#GSXOutputText").css('margin-top', '25px');
     console.log("Submitted GSX Form");
 }
 
+//submits GSX Form, then copies it to the clipboard
+function GSXCopySubmission() {
+    GSXSubmit();
+    //clipboard.writeText(GSXSubmission);
+    //console.log("Copied GSX Submission");
+}
+
 function SROSubmit() {
     var text = "Symptom: ";
-    text += $("#SROSymptominput").val();
+    text += $("#SROSymptomInput").val();
     text += "<br>";
     text += "Backup: ";
     text += $("#SROBackupInput").val();
@@ -365,8 +387,18 @@ function SROSubmit() {
     text += "<br>";
 
     $("#SROOutputText").html(text);
+    SROSubmission = text;
+
     $("#SROOutputText").css('margin-top', '25px');
     console.log("Submitted SRO Form");
+}
+
+//submits SRO Form, then copies to the clipboard
+function SROCopySubmission() {
+    SROSubmit();
+    //clipboard.writeText(SROSubmission);
+    //console.log("Copied SRO Submission");
+    //clipboard.writeText("This text is plain.");
 }
 
 function clearGSX() {
@@ -380,7 +412,7 @@ function clearGSX() {
 }
 
 function clearSRO() {
-    $("#SROSymptominput").val('');
+    $("#SROSymptomInput").val('');
     $("#SROBackupInput").val("Yes");
     $("#SROTimeframeInput").val("2 - 3 Business Days");
     $("#SROPriceInput").val("$");
