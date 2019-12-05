@@ -91,7 +91,7 @@ $("#commonSelect").change(function () {
         optionSelection(true);
         additionalInfoToggle(false);
 
-        $("#SROSymptomInput").val("Battery fails diagnostics and needs to be replced.");
+        $("#SROSymptomInput").val("Battery fails diagnostics and needs to be replaced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
         $("#SROPriceInput").val("$82.04 with tax");
