@@ -55,7 +55,7 @@ $("#commonSelect").change(function () {
         $("#optionSelect").html(optionPhonesHTML);
         $("#optionSelectTitle").html("Device: ");
         $("#optionSelect").val("2. iPhone 6s, 7, 8");
-    } else if(repairVal == "4") {
+    } else if(repairVal == "5") {
         $("#optionSelect").html(optionBootHTML);
         $("#optionSelectTitle").html("Option: ");
         $("#optionSelect").val("1. Flashing Folder");
