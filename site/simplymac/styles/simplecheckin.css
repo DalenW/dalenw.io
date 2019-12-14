@@ -1,8 +1,27 @@
+body {
+    color: var(--slategray);
+}
+
+h1 {
+    text-align: center;
+    color: var(--slategray);
+}
+
+.link {
+    color: var(--main-blue);
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 main {
     padding-left: 0px;
 }
 
 #repairTree {
+    height: 30px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -11,6 +30,7 @@ main {
 
 #repairTree>div {
     width: min-content;
+    height: inherit;
     margin-bottom: 10px;
 }
 
