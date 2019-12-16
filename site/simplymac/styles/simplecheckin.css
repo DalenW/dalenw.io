@@ -28,7 +28,7 @@ main {
     flex-wrap: wrap;
 }
 
-#repairTree>div {
+#repairTree div {
     width: min-content;
     height: inherit;
     margin-bottom: 10px;
