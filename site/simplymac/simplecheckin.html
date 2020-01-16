@@ -6,9 +6,19 @@
     <title>Simple Check-In</title>
     <meta name="viewport" content="width=device-width">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281725-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120281725-1');
+    </script>
+
+
     <link type="text/css" rel="stylesheet" href="/styles/main.css">
-    <link type="text/css" rel="stylesheet" href="operations.css">
-    <link rel="stylesheet" href="simplecheckin.css">
+    <link rel="stylesheet" href="styles/simplecheckin.css">
 </head>
 
 <style>
@@ -31,11 +41,12 @@
                     <option>1. iPhone Broken Display Replacement</option>
                     <option>2. iPhone Battery replacement</option>
                     <option>3. Malware Removal</option>
-                    <option>4. Boot Issues</option>
-                    <option>5. iPhone 7 No-Service REP</option>
-                    <option>6. iPhone X Display REP</option>
-                    <option>7. MacBook Keyboard REP</option>
-                    <option>8. MacBook Pro 15'' Battery REP</option>
+                    <option>4. Wipe & Reinstall</option>
+                    <option>5. Boot Issues</option>
+                    <option>6. iPhone 7 No-Service REP</option>
+                    <option>7. iPhone X Display REP</option>
+                    <option>8. MacBook Keyboard REP</option>
+                    <option>9. MacBook Pro 15'' Battery REP</option>
 
                 </select>
             </div>
@@ -75,13 +86,12 @@
 
                         <div id="GSXWarrantyDiv">
                             <p id="GSXRecommended">Recommended Resolution: </p>
-
                         </div>
                         <textarea rows="3" name="recommended" id="GSXRecommendedInput"></textarea>
 
                         <div id="GSXButtonDiv" class="submitButtonDiv">
-                            <button type="submit" id="GSXSubmitButton" form="GSXForm">Submit</button>
-                            <button type="button" id="GSXClearButton">Clear</button>
+                            <button type="submit" id="GSXSubmitButton" form="GSXForm" class="submit-button">Submit</button>
+                            <button type="button" id="GSXClearButton" class="clear-button">Clear</button>
                         </div>
                     </form>
 
@@ -128,8 +138,8 @@
                         </div>
 
                         <div id="SROButtonDiv" class="submitButtonDiv">
-                            <button type="submit" id="SROSubmitButton" form="SROForm">Submit</button>
-                            <button type="button" id="SROClearButton">Clear</button>
+                            <button type="submit" id="SROSubmitButton" form="SROForm" class="submit-button">Submit</button>
+                            <button type="button" id="SROClearButton" class="clear-button">Clear</button>
                         </div>
 
                         <div id="SROOutputText">
@@ -143,17 +153,13 @@
 
                     <p>Called and spoke with customer, </p>
                     <p>Called and spoke with customer, let them know that their device is ready to be picked up.</p>
-                    <p>Called customer and left a voicemail notifying them that their device is ready to be picked up.
-                    </p>
+                    <p>Called customer and left a voicemail, </p>
+                    <p>Called customer and left a voicemail notifying them that their device is ready to be picked up.</p>
                     <p>Removed all malware from the device and it is running a lot better.</p>
                     <p>Performed an archive install of macOS, computer is booting normally.</p>
                     <p>Reformatted drive and installed macOS.</p>
                     <p>Found SRO in outgoing paperwork pile, marking it as picked up.</p>
-                    <p>Thanks for choosing Simply Mac as your Apple Service Authorized Service Provider.
-
-                        As a thank you we would like to offer you 15% any accessory and our Simple Care warranty at a great price!
-                        
-                        We are able to offer you a Warranty on your device starting at $99 for a years worth of coverage.  Ask any of our associates for more information</p>
+                    <p>Thanks for choosing Simply Mac as your Apple Service Authorized Service Provider. As a thank you we would like to offer you 15% any accessory and our Simple Care warranty at a great price! We are able to offer you a Warranty on your device starting at $99 for a years worth of coverage.  Ask any of our associates for more information.</p>
                 </div>
             </div>
         </div>
@@ -162,6 +168,6 @@
 
 <script src="/scripts/jquery.js"></script>
 <script src="/scripts/clipboard-polyfill.promise.js"></script>
-<script src="simplecheckin.js"></script>
+<script src="js/simplecheckin.js"></script>
 
 </html>

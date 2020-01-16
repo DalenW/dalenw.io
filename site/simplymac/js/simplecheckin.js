@@ -55,7 +55,7 @@ $("#commonSelect").change(function () {
         $("#optionSelect").html(optionPhonesHTML);
         $("#optionSelectTitle").html("Device: ");
         $("#optionSelect").val("2. iPhone 6s, 7, 8");
-    } else if(repairVal == "4") {
+    } else if(repairVal == "5") {
         $("#optionSelect").html(optionBootHTML);
         $("#optionSelectTitle").html("Option: ");
         $("#optionSelect").val("1. Flashing Folder");
@@ -121,8 +121,23 @@ $("#commonSelect").change(function () {
         SROSubmit();
     }
 
-    //boot issues
+    //wipe & reinstall
     if(repairVal == "4") { 
+        reset(false);
+        optionSelection(false);
+        additionalInfoToggle(false);
+
+        $("#SROSymptomInput").val("Wipe and reinstall macOS.");
+        $("#SROBackupInput").val("NA");
+        $("#SROTimeframeInput").val("2 - 3 Business Days");
+        $("#SROPriceInput").val("$75.06 with tax");
+        $("#SROFirmwareInput").val("Off");
+
+        SROSubmit();
+    }
+
+    //boot issues
+    if(repairVal == "5") { 
         reset(false);
         optionSelection(true);
         additionalInfoToggle(false);
@@ -137,7 +152,7 @@ $("#commonSelect").change(function () {
     }
 
     //iphone no service rep
-    if(repairVal == "5") { 
+    if(repairVal == "6") { 
         reset(true);
         optionSelection(false);
         additionalInfoToggle(false);
@@ -158,7 +173,7 @@ $("#commonSelect").change(function () {
     }
 
     //iphone x display rep
-    if(repairVal == "6") { 
+    if(repairVal == "7") { 
         reset(true);
         optionSelection(false);
         additionalInfoToggle(true);
@@ -181,7 +196,7 @@ $("#commonSelect").change(function () {
     }
 
     //mac keyboard rep
-    if(repairVal == "7") {
+    if(repairVal == "8") {
         reset(true);
         optionSelection(false);
         additionalInfoToggle(false);
@@ -202,7 +217,7 @@ $("#commonSelect").change(function () {
     }
 
     //mac battery rep
-    if(repairVal == "8") { 
+    if(repairVal == "9") { 
         reset(true);
         optionSelection(false);
         additionalInfoToggle(true);
@@ -289,7 +304,7 @@ $("#optionSelect").change(function () {
     }
 
     //boot issues
-    if (repairVal == "4") {
+    if (repairVal == "5") {
         switch (value) {
             case 1:
                 $("#SROSymptomInput").val("Boots to a flashing folder.");
