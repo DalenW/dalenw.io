@@ -388,7 +388,7 @@ function SROSubmit() {
     var text = "Symptom: ";
     text += $("#SROSymptomInput").val();
     text += "<br>";
-    text += "Backup: ";
+    text += "Backed up: ";
     text += $("#SROBackupInput").val();
     text += "<br>";
     text += "Timeframe: ";
