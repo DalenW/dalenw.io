@@ -115,7 +115,7 @@ $("#commonSelect").change(function () {
         $("#SROSymptomInput").val("Malware Removal");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
-        $("#SROPriceInput").val("$75.06 with tax");
+        $("#SROPriceInput").val("$107.24 with tax");
         $("#SROFirmwareInput").val("Off");
 
         SROSubmit();
@@ -130,7 +130,7 @@ $("#commonSelect").change(function () {
         $("#SROSymptomInput").val("Wipe and reinstall macOS.");
         $("#SROBackupInput").val("NA");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
-        $("#SROPriceInput").val("$75.06 with tax");
+        $("#SROPriceInput").val("$85.79 with tax");
         $("#SROFirmwareInput").val("Off");
 
         SROSubmit();
@@ -145,7 +145,7 @@ $("#commonSelect").change(function () {
         $("#SROSymptomInput").val("Boots to a flashing folder.");
         $("#SROBackupInput").val("NA");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
-        $("#SROPriceInput").val("$75.06 with tax");
+        $("#SROPriceInput").val("$85.79 with tax");
         $("#SROFirmwareInput").val("Off");
 
         SROSubmit();
@@ -203,7 +203,7 @@ $("#commonSelect").change(function () {
 
         $("#SROSymptomInput").val("Keyboard REP. The keys having issues are ");
         $("#SROBackupInput").val("Yes");
-        $("#SROTimeframeInput").val("5 - 7 Business Days");
+        $("#SROTimeframeInput").val("3 - 5 Business Days");
         $("#SROPriceInput").val("REP");
         $("#SROFirmwareInput").val("Off");
 
