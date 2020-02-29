@@ -1,0 +1,5 @@
+#set("main") {
+    <p>This is the index.</p>
+}
+
+#embed("shared/template")

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>#(title) - DalenW</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281725-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-120281725-1');
+        </script>
+        
+    </head>
+    
+    <body>
+        <header>
+            #embed("shared/navbar")
+        </header>
+        
+        <main>
+            #get(main)
+        </main>
+        
+        <footer>
+            <h3>Footer</h3>
+        </footer>
+    </body>
+</html>
+    
+    
+    
+    
+    

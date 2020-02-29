@@ -5,3 +5,8 @@ Caddyfile
 *.log
 
 .vscode
+
+*.xcbkptlist
+*.xcuserstate
+
+.build
