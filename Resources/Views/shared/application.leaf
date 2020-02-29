@@ -15,21 +15,15 @@
 
             gtag('config', 'UA-120281725-1');
         </script>
+
+        <link type="text/css" rel="stylesheet" href="/resources/styles/normalize.css">
+        <link type="text/css" rel="stylesheet" href="/styles/application.css">
         
+        <script src="/resources/javascript/jquery.js"></script>
     </head>
     
     <body>
-        <header>
-            #embed("shared/navbar")
-        </header>
-        
-        <main>
-            #get(main)
-        </main>
-        
-        <footer>
-            <h3>Footer</h3>
-        </footer>
+        #get(body)
     </body>
 </html>
     

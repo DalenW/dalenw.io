@@ -4,7 +4,7 @@ import Vapor
 public func routes(_ router: Router) throws {
     // "It works" page
     router.get { req in
-        return try req.view().render("index", ["title": "Home"])
+        return try req.view().render("home", ["title": "Home"])
     }
     
     // Says hello
