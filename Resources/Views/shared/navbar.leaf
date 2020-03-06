@@ -8,7 +8,7 @@
     
     <div id="quicklinksDiv" class="headerDiv">
         <div class="quicklinksItemDiv">
-            <a href="/projects/list">
+            <a href="/projects">
                 <div class="quicklinksItem">Projects</div>
             </a>
         </div>

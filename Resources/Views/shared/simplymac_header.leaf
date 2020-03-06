@@ -1,0 +1,6 @@
+<link type="text/css" rel="stylesheet" href="/styles/simplymac.css">
+
+<header>
+    <img id="smLogo" src="/images/sm_logo.svg" alt="Simply Mac Logo" title="Logo">
+    <h1>Simply Mac Operations</h1>
+</header>
