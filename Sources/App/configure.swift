@@ -1,6 +1,8 @@
 import Leaf
 import Vapor
 
+import LeafErrorMiddleware
+
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
     // Register providers first
@@ -13,10 +15,14 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     
     // Use Leaf for rendering views
     config.prefer(LeafRenderer.self, for: ViewRenderer.self)
+    
+    services.register { worker in
+        return try LeafErrorMiddleware(environment: worker.environment)
+    }
 
     // Register middleware
     var middlewares = MiddlewareConfig() // Create _empty_ middleware config
+    middlewares.use(LeafErrorMiddleware.self)
     middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
-    middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
     services.register(middlewares)
 }

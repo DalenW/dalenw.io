@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Error: #(status)</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120281725-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-120281725-1');
+        </script>
+
+        <link type="text/css" rel="stylesheet" href="/resources/styles/normalize.css">
+        <link type="text/css" rel="stylesheet" href="/styles/application.css">
+        
+    </head>
+
+    <style>
+        body {
+            background-color: #373737;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #fcfcfc
+        }
+
+        #siteTitle {
+            width: 50%;
+        }
+
+        header {
+            margin-top: 5%;
+        }
+
+        main {
+            margin-top: 25px;
+        }
+
+        h1 {
+            font-size: 5em;
+        }
+    </style>
+
+    <body>
+        <header>
+            <a href="/">
+                <img id="siteTitle" src="/images/Site_Logo.svg" alt="Title Image" title="Home">
+            </a>
+        </header>
+        <main>
+            <h1>#(status)</h1>
+            <p>#(statusMessage)</p>
+        </main>
+    </body>
+</html>
+
