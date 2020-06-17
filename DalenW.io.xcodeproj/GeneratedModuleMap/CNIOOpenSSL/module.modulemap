@@ -1,4 +1,4 @@
 module CNIOOpenSSL {
-    umbrella "/Users/dalen/Documents/Programming/DalenW.io/.build/checkouts/swift-nio-ssl/Sources/CNIOOpenSSL/include"
+    umbrella "/Users/dalen/git/DalenW.io/.build/checkouts/swift-nio-ssl/Sources/CNIOOpenSSL/include"
     export *
 }

@@ -1,4 +1,4 @@
 module CCryptoOpenSSL {
-    umbrella "/Users/dalen/Documents/Programming/DalenW.io/.build/checkouts/crypto/Sources/CCryptoOpenSSL/include"
+    umbrella "/Users/dalen/git/DalenW.io/.build/checkouts/crypto/Sources/CCryptoOpenSSL/include"
     export *
 }

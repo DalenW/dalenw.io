@@ -19,8 +19,14 @@ public func routes(_ router: Router) throws {
         ])
     }
     
+    router.get("sm") { req in
+        return try req.view().render("simplymac/home", ["title": "Simply Mac Operations"])
+    }
+    
     //Simply Mac page
-    router.get("simplymac") { req in
-        return try req.view().render("simplymac/operations", ["title": "Simply Mac Operations"])
+    router.group("simplymac") { simplymac in
+        simplymac.get { req in
+            return try req.view().render("simplymac/home", ["title": "Simply Mac Operations"])
+        }
     }
 }
