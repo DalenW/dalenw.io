@@ -70,7 +70,7 @@ $("#commonSelect").change(function () {
         $("#SROSymptomInput").val("Display is cracked and needs to be replaced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
-        $("#SROPriceInput").val("$177 + tax");
+        $("#SROPriceInput").val("$187 + tax");
         $("#SROFirmwareInput").val("Off");
 
         $("#GSXIssueInput").val("Display is cracked and needs to be replaced.");
@@ -94,7 +94,7 @@ $("#commonSelect").change(function () {
         $("#SROSymptomInput").val("Battery fails diagnostics and needs to be replaced.");
         $("#SROBackupInput").val("Yes");
         $("#SROTimeframeInput").val("EOD");
-        $("#SROPriceInput").val("$82.04 with tax");
+        $("#SROPriceInput").val("$86.97 tax");
         $("#SROFirmwareInput").val("Off");
 
         $("#GSXIssueInput").val("Battery needs to be replaced.");
@@ -130,7 +130,7 @@ $("#commonSelect").change(function () {
         $("#SROSymptomInput").val("Wipe and reinstall macOS.");
         $("#SROBackupInput").val("NA");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
-        $("#SROPriceInput").val("$85.79 with tax");
+        $("#SROPriceInput").val("$99.99 + tax");
         $("#SROFirmwareInput").val("Off");
 
         SROSubmit();
@@ -145,7 +145,7 @@ $("#commonSelect").change(function () {
         $("#SROSymptomInput").val("Boots to a flashing folder.");
         $("#SROBackupInput").val("NA");
         $("#SROTimeframeInput").val("2 - 3 Business Days");
-        $("#SROPriceInput").val("$85.79 with tax");
+        $("#SROPriceInput").val("$99.99 + tax");
         $("#SROFirmwareInput").val("Off");
 
         SROSubmit();
@@ -201,9 +201,9 @@ $("#commonSelect").change(function () {
         optionSelection(false);
         additionalInfoToggle(false);
 
-        $("#SROSymptomInput").val("Keyboard REP. The keys having issues are ");
+        $("#SROSymptomInput").val("Keyboard REP. The keys having issues are PUTKEYSHERE");
         $("#SROBackupInput").val("Yes");
-        $("#SROTimeframeInput").val("3 - 5 Business Days");
+        $("#SROTimeframeInput").val("5 - 7 Business Days");
         $("#SROPriceInput").val("REP");
         $("#SROFirmwareInput").val("Off");
 
@@ -253,27 +253,27 @@ $("#optionSelect").change(function () {
 
         switch (value) {
             case 1:
-                $("#SROPriceInput").val("$157 + tax");
+                $("#SROPriceInput").val("$167 + tax");
                 additionalInfoToggle(false);
                 break;
             case 2:
-                $("#SROPriceInput").val("$177 + tax");
+                $("#SROPriceInput").val("$187 + tax");
                 $("#additionalInfo").html("<p><h3>6s Displays</h3><br><b>Space Gray</b><p>661-07285</p><b>Silver</b><p>661-07286</p><b>Gold</b><p>661-07287</p><b>Rose Gold</b><p>661-07288</p><br><h3>7 Displays</h3><br><b>Black, Jet Black</b><p>661-07293</p><b>Silver, Red</b><p>661-07294</p><b>Gold</b><p>661-07295</p><b>Rose Gold</b><p>661-07296</p><br><h3>8 Displays</h3><br><b>Space Gray</b><p>661-08933</p><b>Silver</b><p>661-08934</p><b>Gold</b><p>661-09081</p><b>Red</b><p>661-10102</p></p>");
                 break;
             case 3:
-                $("#SROPriceInput").val("$197 + tax");
+                $("#SROPriceInput").val("$207 + tax");
                 $("#additionalInfo").html("<p><h3>6s+ Displays</h3><br><b>Space Gray</b><p>661-07293</p><b>Silver</b><p>661-07294</p><b>Gold</b><p>661-07295</p><b>Rose Gold</b><p>661-07296</p><br><h3>7+ Displays</h3><br><b>Black, Jet Black</b><p>661-07297</p><b>Silver, Red</b><p>661-07298</p><b>Gold</b><p>661-07299</p><b>Rose Gold</b><p>661-07300</p>br><h3>8+ Displays</h3><br><b>Space Gray</b><p>661-09032</p><b>Silver</b><p>661-09033</p><b>Gold</b><p>661-09034</p><b>Red</b><p>661-10103</p></p>");
                 break;
             case 4:
-                $("#SROPriceInput").val("$227 + tax");
+                $("#SROPriceInput").val("$237 + tax");
                 $("#additionalInfo").html("<p><b>XR Display</b><p>661-13114</p><br><b>11 Display</b><p>661-14098</p></p>");
                 break;
             case 5:
-                $("#SROPriceInput").val("$307 + tax");
+                $("#SROPriceInput").val("$317 + tax");
                 $("#additionalInfo").html("<p><b>X Display</b><p>661-13114</p><br><b>XS Display</b><p>661-10608</p><br><b>11 Pro Display</b><p>661-14096</p></p>");
                 break;
             case 6:
-                $("#SROPriceInput").val("$357 + tax");
+                $("#SROPriceInput").val("$367 + tax");
                 $("#additionalInfo").html("<p><b>XS Max Display</b><p>661-11037</p><br><b>11 Pro Max Display</b><p>661-14099</p></p>");
                 break;
             default:
@@ -293,7 +293,7 @@ $("#optionSelect").change(function () {
             case 1:
             case 2:
             case 3:
-                $("#SROPriceInput").val("$82.04 with tax");
+                $("#SROPriceInput").val("$86.97 + tax");
                 break;
             case 4:
             case 5:
