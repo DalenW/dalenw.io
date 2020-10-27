@@ -114,7 +114,7 @@ $("#commonSelect").change(function () {
 
         $("#SROSymptomInput").val("Malware Removal");
         $("#SROBackupInput").val("Yes");
-        $("#SROTimeframeInput").val("2 - 3 Business Days");
+        $("#SROTimeframeInput").val("3 Business Days");
         $("#SROPriceInput").val("$107.24 with tax");
         $("#SROFirmwareInput").val("Off");
 
@@ -129,7 +129,7 @@ $("#commonSelect").change(function () {
 
         $("#SROSymptomInput").val("Wipe and reinstall macOS.");
         $("#SROBackupInput").val("NA");
-        $("#SROTimeframeInput").val("2 - 3 Business Days");
+        $("#SROTimeframeInput").val("3 Business Days");
         $("#SROPriceInput").val("$99.99 + tax");
         $("#SROFirmwareInput").val("Off");
 
@@ -144,7 +144,7 @@ $("#commonSelect").change(function () {
 
         $("#SROSymptomInput").val("Boots to a flashing folder.");
         $("#SROBackupInput").val("NA");
-        $("#SROTimeframeInput").val("2 - 3 Business Days");
+        $("#SROTimeframeInput").val("1 week");
         $("#SROPriceInput").val("$99.99 + tax");
         $("#SROFirmwareInput").val("Off");
 
@@ -159,7 +159,7 @@ $("#commonSelect").change(function () {
 
         $("#SROSymptomInput").val("iPhone 7 No Service REP");
         $("#SROBackupInput").val("Yes");
-        $("#SROTimeframeInput").val("1 - 2 Weeks");
+        $("#SROTimeframeInput").val("2 Weeks");
         $("#SROPriceInput").val("REP");
         $("#SROFirmwareInput").val("Off");
 
@@ -203,7 +203,7 @@ $("#commonSelect").change(function () {
 
         $("#SROSymptomInput").val("Keyboard REP. The keys having issues are PUTKEYSHERE");
         $("#SROBackupInput").val("Yes");
-        $("#SROTimeframeInput").val("5 - 7 Business Days");
+        $("#SROTimeframeInput").val("2 weeks");
         $("#SROPriceInput").val("REP");
         $("#SROFirmwareInput").val("Off");
 
@@ -224,7 +224,7 @@ $("#commonSelect").change(function () {
 
         $("#SROSymptomInput").val("Battery REP. The battery needs to be replaced.");
         $("#SROBackupInput").val("Yes");
-        $("#SROTimeframeInput").val("5 - 7 Business Days");
+        $("#SROTimeframeInput").val("1 week");
         $("#SROPriceInput").val("REP");
         $("#SROFirmwareInput").val("Off");
 
@@ -235,6 +235,47 @@ $("#commonSelect").change(function () {
 
         $("#additionalInfo").html("661-02536<br>923-03454");
 
+        SROSubmit();
+        GSXSubmit();
+    }
+
+    //mac swollen battery
+    if(repairVal == "10") { 
+        reset(true);
+        optionSelection(false);
+        additionalInfoToggle(true);
+
+        $("#SROSymptomInput").val("Swollen Battery. The battery needs to be replaced.");
+        $("#SROBackupInput").val("Yes");
+        $("#SROTimeframeInput").val("2 weeks");
+        $("#SROPriceInput").val("REP");
+        $("#SROFirmwareInput").val("Off");
+
+        $("#GSXIssueInput").val("Swollen Battery");
+        $("#GSXStepsTakenInput").val("Verified the issue. The device has a swollen battery and requires replacement.");
+        $("#GSXCosmeticInput").val('Marks and dings');
+        $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend replacing the Top Case.");
+
+        SROSubmit();
+        GSXSubmit();
+    }
+
+    //mac swollen battery
+    if(repairVal == "11") { 
+        reset(true);
+        optionSelection(false);
+        additionalInfoToggle(true);
+
+        $("#SROSymptomInput").val("Device does not power on.");
+        $("#SROBackupInput").val("Yes");
+        $("#SROTimeframeInput").val("2 weeks");
+        $("#SROPriceInput").val("REP");
+        $("#SROFirmwareInput").val("Off");
+
+        $("#GSXIssueInput").val("Dead Unit / No Power");
+        $("#GSXStepsTakenInput").val("Verified the issue. The device does not power on. Attempted SMC reset, issue persists.");
+        $("#GSXCosmeticInput").val('Marks and dings');
+        $("#GSXRecommendedInput").val("Device is eligible for In Warranty repair according to the VMI Guide. Recommend a mail in repair.");
 
         SROSubmit();
         GSXSubmit();
