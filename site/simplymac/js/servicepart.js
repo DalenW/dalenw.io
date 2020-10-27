@@ -1,13 +1,14 @@
 var sro = "null";
 var sentTracking = "null";
 var returnTracking = "null";
+var kgb = "null";
 var RQCheck = true;
 var sentShipper = "Shipper";
 var returnShipper = "Shipper";
 
 var UPSLength = 18;
 var FedExLength = 34;
-var KGBLength = 18;
+var KGBLength = 17;
 
 //on page load clear form
 clear();
@@ -82,7 +83,8 @@ $("#returnTrackingInput").change(function () {
 
 $("#KGBInput").change(function () {
     var value = $("#KGBInput").val();
-
+    kgb = value;
+    
     if (value.length == KGBLength) {
         $("#KGBLabel").css("color", "var(--main-green)");
     } else {
@@ -104,13 +106,18 @@ $("#RQCheck").change(function () {
 function updateText() {
     if (RQCheck) {
         var text = "Recieved item from Apple in RQ. <br><br>";
+
+        text += "GSX PO: " + sro +  "<br>";
+
+        text += "KGB: " + kgb +  "<br>";
+
         text += sentShipper + " Sent Tracking: " + sentTracking + "<br>";
 
         if (returnTracking != "null") {
-            text += returnShipper + " Return Tracking: " + returnTracking + "<br>";
+            text += returnShipper + " Return Tracking: " + returnTracking;
         }
 
-        text += "RQTracking: " + sro;
+        
 
         $("#outputText").html(text);
     } else {
