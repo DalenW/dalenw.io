@@ -39,30 +39,28 @@ $("#warrantyCheck").change(function () {
 });
 
 $("#commonSelect").change(function () {
-    repairVal = $("#commonSelect option:selected").val();
-    console.log(repairVal);
-    repairVal = repairVal.slice(0,1); //get first character which should be the corrosponding number
-    console.log(repairVal);
+    commonSelect = document.getElementById("commonSelect");
+    repairVal = v.value
 
-    if(repairVal == "N") { //reset everything
+    if(repairVal == 0) { //reset everything
         reset(true);
         optionSelection(false);
         additionalInfoToggle(false);
     }
 
     //set repair option selection
-    if(repairVal == "1" || repairVal == "2") {
+    if(repairVal == 1 || repairVal == 2) {
         $("#optionSelect").html(optionPhonesHTML);
         $("#optionSelectTitle").html("Device: ");
         $("#optionSelect").val("2. iPhone 6s, 7, 8");
-    } else if(repairVal == "5") {
+    } else if(repairVal == 5) {
         $("#optionSelect").html(optionBootHTML);
         $("#optionSelectTitle").html("Option: ");
         $("#optionSelect").val("1. Flashing Folder");
     }
 
     //iphone display replacement
-    if(repairVal == "1") { 
+    if(repairVal == 1) { 
         reset(false);
         optionSelection(true);
         additionalInfoToggle(true);
@@ -86,7 +84,7 @@ $("#commonSelect").change(function () {
     }
 
     //iphone battery replacement
-    if(repairVal == "2") { 
+    if(repairVal == 2) { 
         reset(false);
         optionSelection(true);
         additionalInfoToggle(false);
@@ -107,7 +105,7 @@ $("#commonSelect").change(function () {
     }
 
     //malware removal
-    if(repairVal == "3") { 
+    if(repairVal == 3) { 
         reset(false);
         optionSelection(false);
         additionalInfoToggle(false);
@@ -122,7 +120,7 @@ $("#commonSelect").change(function () {
     }
 
     //wipe & reinstall
-    if(repairVal == "4") { 
+    if(repairVal == 4) { 
         reset(false);
         optionSelection(false);
         additionalInfoToggle(false);
@@ -137,7 +135,7 @@ $("#commonSelect").change(function () {
     }
 
     //boot issues
-    if(repairVal == "5") { 
+    if(repairVal == 5) { 
         reset(false);
         optionSelection(true);
         additionalInfoToggle(false);
@@ -152,7 +150,7 @@ $("#commonSelect").change(function () {
     }
 
     //iphone no service rep
-    if(repairVal == "6") { 
+    if(repairVal == 6) { 
         reset(true);
         optionSelection(false);
         additionalInfoToggle(false);
@@ -173,7 +171,7 @@ $("#commonSelect").change(function () {
     }
 
     //iphone x display rep
-    if(repairVal == "7") { 
+    if(repairVal == 7) { 
         reset(true);
         optionSelection(false);
         additionalInfoToggle(true);
@@ -196,7 +194,7 @@ $("#commonSelect").change(function () {
     }
 
     //mac keyboard rep
-    if(repairVal == "8") {
+    if(repairVal == 8) {
         reset(true);
         optionSelection(false);
         additionalInfoToggle(false);
@@ -217,7 +215,7 @@ $("#commonSelect").change(function () {
     }
 
     //mac battery rep
-    if(repairVal == "9") { 
+    if(repairVal == 9) { 
         reset(true);
         optionSelection(false);
         additionalInfoToggle(true);
@@ -240,10 +238,10 @@ $("#commonSelect").change(function () {
     }
 
     //mac swollen battery
-    if(repairVal == "10") { 
+    if(repairVal == 10) { 
         reset(true);
         optionSelection(false);
-        additionalInfoToggle(true);
+        additionalInfoToggle(false);
 
         $("#SROSymptomInput").val("Swollen Battery. The battery needs to be replaced.");
         $("#SROBackupInput").val("Yes");
@@ -261,10 +259,10 @@ $("#commonSelect").change(function () {
     }
 
     //mac swollen battery
-    if(repairVal == "11") { 
+    if(repairVal == 11) { 
         reset(true);
         optionSelection(false);
-        additionalInfoToggle(true);
+        additionalInfoToggle(false);
 
         $("#SROSymptomInput").val("Device does not power on.");
         $("#SROBackupInput").val("Yes");
