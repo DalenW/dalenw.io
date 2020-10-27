@@ -7,6 +7,7 @@ var returnShipper = "Shipper";
 
 var UPSLength = 18;
 var FedExLength = 34;
+var KGBLength = 18;
 
 //on page load clear form
 clear();
@@ -79,6 +80,18 @@ $("#returnTrackingInput").change(function () {
     updateText();
 });
 
+$("#KGBInput").change(function () {
+    var value = $("#KGBInput").val();
+
+    if (value.length == KGBLength) {
+        $("#KGBLabel").css("color", "var(--main-green)");
+    } else {
+        $("#KGBLabel").css("color", "var(--main-red)");
+    }
+
+    updateText();
+});
+
 $("#RQCheck").change(function () {
     if ($("#RQCheck").is(":checked")) {
         RQCheck = true;
@@ -113,6 +126,7 @@ function clear() {
     $("#SROInput").val('');
     $("#sentTrackingInput").val('');
     $("#returnTrackingInput").val('');
+    $("#KGBInput").val('');
 
     console.log("Cleared");
 }
