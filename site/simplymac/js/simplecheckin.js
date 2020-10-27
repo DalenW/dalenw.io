@@ -40,7 +40,7 @@ $("#warrantyCheck").change(function () {
 
 $("#commonSelect").change(function () {
     commonSelect = document.getElementById("commonSelect");
-    repairVal = v.value
+    repairVal = commonSelect.value
 
     if(repairVal == 0) { //reset everything
         reset(true);
