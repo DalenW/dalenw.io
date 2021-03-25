@@ -35,7 +35,7 @@
             "language": "Web Design",
             "description": "A class project I did in my beginner web design class. Talk to an API and display the weather. Pretty straight forward. This site is ugly.",
             "aboutURL": "",
-            "projectURL": "weather/home"
+            "projectURL": "weather/home.html"
         },
         {
             "name": "Robot",
@@ -62,7 +62,7 @@
             "language": "Web Design",
             "description": "I have no idea when or why I wrote this, but enjoy.",
             "aboutURL": "",
-            "projectURL": "random/wordbubble"
+            "projectURL": "random/wordbubble.html"
         },
         {
             "name": "Catch the Link",
@@ -71,7 +71,7 @@
             "language": "Web Design",
             "description": "I have no idea when or why I wrote this, but enjoy.",
             "aboutURL": "",
-            "projectURL": "random/catchthelink"
+            "projectURL": "random/catchthelink.html"
         }
     ]
 }
